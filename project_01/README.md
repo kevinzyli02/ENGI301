@@ -8,14 +8,14 @@ To run the programs, please utilize the `sudo ./run`. Change configure_pins if n
 <h2> Challenges </h2>
 The biggest challenge I faced was actually getting an emulator to run. I tried my setup with Retroarch, visualboyadvance-m, desmume and Advance MAME with little success.
 
-To install retroarch, I tried two methods using apt and snap store. In order to install using apt, sudo apt install retroarch, which did not have any issues installing. However, I would always encounter the same problems as seen below. I messed around with the retroarch.cfg file with little success. Similar problems occured when running through the snap store.
+To install retroarch, I tried two methods using apt and snap store. In order to install using apt, sudo apt install retroarch, which did not have any issues installing. However, I would always encounter the same problems as seen below. I messed around with the retroarch.cfg file with little success. Similar problems occured when running through the snap store (https://snapcraft.io/install/retroarch/debian).
 ```python
 debian@beaglebone:~$ retroarch
 error: XDG_RUNTIME_DIR not set in the environment.
 error: XDG_RUNTIME_DIR not set in the environment.
 Segmentation fault
 ```
-Next, I looked into visualboyadvance-m, which seemed to be the most promising emulator since it had the best compatibility in debian. I installed first through the snap store, which yielded another segmentation fault. I tried editing the configurations for the snap store, which did not have much documentation. In order to manually connect, you can't really specify which device is required. Most of it is reliant on the system's default, which I could also not figure out. In the end, I gave up with snap store and tried to compile the game itself.
+Next, I looked into visualboyadvance-m, which seemed to be the most promising emulator since it had the best compatibility in debian. I installed first through the snap store (https://snapcraft.io/visualboyadvance-mf), which yielded another segmentation fault. I tried editing the configurations for the snap store, which did not have much documentation. In order to manually connect, you can't really specify which device is required. Most of it is reliant on the system's default, which I could also not figure out. In the end, I gave up with snap store and tried to compile the game itself.
 ```python
 debian@beaglebone:~ snap run visualboyadvance-m
 mkdir: cannot create directory ‘/run/user/1000’: Permission denied
