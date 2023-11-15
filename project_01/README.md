@@ -1,7 +1,9 @@
 <h1> GameBeagle: PocketBeagle turned into Gameboy</h1>
-Hello! While the project does not completely work, here are the steps that I took to address some of the problems I faced. 
+Hello! While the project is not functional, here are the steps that I took to address some of the problems I faced. 
 Please look at the Hackster page for more information! (https://www.hackster.io/kzl3/gamebeagle-a7b722#overview)
 
+
+<h2> Challenges </h2>
 The biggest challenge I faced was actually getting an emulator to run. I tried my setup with Retroarch, visualboyadvance-m, desmume and Advance MAME with little success.
 
 To install retroarch, I tried two methods using apt and snap store. In order to install using apt, sudo apt install retroarch, which did not have any issues installing. However, I would always encounter the same problems as seen below. I messed around with the retroarch.cfg file with little success. Similar problems occured when running through the snap store.
