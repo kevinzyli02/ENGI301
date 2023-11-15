@@ -51,11 +51,9 @@ sudo modprobe flexfb width=480 height=480 buswidth=8 init=\
 -3
 
 dirs=(
-    '/var/lib/cloud9/ENGI301/project_01/button:'
-#    '/var/lib/cloud9/ENGI301/python/servo:'
-#    '/var/lib/cloud9/ENGI301/python/button:'
-#    '/var/lib/cloud9/ENGI301/python/led:'
-#    '/var/lib/cloud9/ENGI301/python/potentiometer'
+    '/var/lib/cloud9/ENGI301/python/button:'
+    '/var/lib/cloud9/ENGI301/python/led:'
+    '/var/lib/cloud9/ENGI301/python/potentiometer'
 )
 
 PYTHONPATH=$(IFS=; echo "${dirs[*]}") python3 pocketboy.py
