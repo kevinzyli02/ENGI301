@@ -1,5 +1,6 @@
 <h1> GameBeagle: PocketBeagle turned into Gameboy</h1>
-Hello! While the project is still being developed, here are the steps that I took to address some of the problems I faced. 
+
+Hello! While the project is still being developed, here are the steps that I took to address some of the problems I faced. Please refer to the Li_ENGI301_project_01_proposal.pptx for more materials (BOM) and block diagrams. 
 Please look at the Hackster page for more information! (https://www.hackster.io/kzl3/gamebeagle-a7b722#overview)
 
 To run the programs, please utilize the `sudo ./run`. Change configure_pins if needed, but I found that following the Mouser Guide with device tree setup was more successful. 
