@@ -1,7 +1,8 @@
 <h1> GameBeagle: PocketBeagle turned into Gameboy</h1>
-Hello! While the project is not functional, here are the steps that I took to address some of the problems I faced. 
+Hello! While the project is still being developed, here are the steps that I took to address some of the problems I faced. 
 Please look at the Hackster page for more information! (https://www.hackster.io/kzl3/gamebeagle-a7b722#overview)
 
+To run the programs, please utilize the `sudo ./run` file
 
 <h2> Challenges </h2>
 The biggest challenge I faced was actually getting an emulator to run. I tried my setup with Retroarch, visualboyadvance-m, desmume and Advance MAME with little success.
