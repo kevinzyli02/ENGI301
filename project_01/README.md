@@ -2,7 +2,7 @@
 Hello! While the project is still being developed, here are the steps that I took to address some of the problems I faced. 
 Please look at the Hackster page for more information! (https://www.hackster.io/kzl3/gamebeagle-a7b722#overview)
 
-To run the programs, please utilize the `sudo ./run` file
+To run the programs, please utilize the `sudo ./run`. Change configure_pins if needed, but I found that following the Mouser Guide with device tree setup was more successful. 
 
 <h2> Challenges </h2>
 The biggest challenge I faced was actually getting an emulator to run. I tried my setup with Retroarch, visualboyadvance-m, desmume and Advance MAME with little success.
