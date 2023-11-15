@@ -30,7 +30,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
-# Configure pins for People Counter
+# Configure pins for GameBeagle
 # --------------------------------------------------------------------------
 # PWM
 config-pin P1_36 pmw # buzzer
