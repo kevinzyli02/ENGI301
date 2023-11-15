@@ -38,5 +38,6 @@ ALSA lib pcm_dmix.c:1108:(snd_pcm_dmix_open) unable to open slave
 ALSA lib pcm_dmix.c:1108:(snd_pcm_dmix_open) unable to open slave
 No video modes available for the current game.
 Failed to initialize the video
-'''
+```
+
 Without many other steps I could take, I decided to take a break and explore it further later on. If anyone is interested in making their own emulator console with the PocketBeagle, I highly recommend using a commonly used screen such as the Adafruit ILI9331 to save on the headache of setting up and using the frame buffer. Before buying other parts, I would recommend setting up the software aspect of the device first, with special emphasis on having the emulator recognize and initialize video onto the display, as this seems to be the largest issue with actually starting the emulator. Even though I did not get the emulator running, I learned a lot from the project and will continue to attempt to get an emulator running. Good luck to anyone attempting similar projects and hopefully my insights were helpful!
