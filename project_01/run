@@ -33,8 +33,6 @@
 
 cd /var/lib/cloud9/ENGI301/project_01
 
-./configure_pins.sh
-
 # Initialize Framebuffer for SPI screen
 sudo modprobe fbtft_device name=flexfb gpios=reset:87,dc:89,cs:5 speed=24000000 &&\
 sudo modprobe flexfb width=480 height=480 buswidth=8 init=\
@@ -49,14 +47,11 @@ sudo modprobe flexfb width=480 height=480 buswidth=8 init=\
 -2,20,\
 -1,0x13,\
 -3
+export FRAMEBUFFER=/dev/fb0
 
-dirs=(
-    '/var/lib/cloud9/ENGI301/python/button:'
-    '/var/lib/cloud9/ENGI301/python/led:'
-    '/var/lib/cloud9/ENGI301/python/potentiometer'
-)
+# Start Game
+advmame robby
 
-PYTHONPATH=$(IFS=; echo "${dirs[*]}") python3 pocketboy.py
 
 
 
