@@ -30,10 +30,10 @@ debian@beaglebone:~$ desmume
 (desmume:5257): Gtk-WARNING **: 04:34:37.626: cannot open display:
 ```
 <h2> Best Attempt: Advance MAME</h2>
-Lastly, I tried Advance MAME using a guide from Mouser (https://www.mouser.com/applications/retro-arcade-build/). What was unique about this guide was that they utilized a PocketBeagle and included its own device tree layout, hopefully solving the problem of the OS not recognizing the display's frame buffer. I had tried to setup the ILI 9488 frame buffer using the fbtft driver, but messed up while setting the device tree and ended up having to reinstall Debian on a new SD card. This page provided a detailed explanation of how to set this up on the BeagleBone Black.
+Lastly, I tried Advance MAME using a guide from Mouser. What was unique about this guide was that they utilized a PocketBeagle and included its own device tree layout, hopefully solving the problem of the OS not recognizing the display's frame buffer. I had tried to setup the ILI 9488 frame buffer using the fbtft driver, but messed up while setting the device tree and ended up having to reinstall Debian on a new SD card. This page provided a detailed explanation of how to set this up on the BeagleBone Black.
 
-Following their connections, I used their Device Tree Overlay Creation Guide in their github repository to setup the button and screen setups. I then installed Advanced MAME following their instructions with few problems ( I utilized -j1 while building the code as -j3 ran into issues for me). Even though button and displays were mapped in the device tree, I still ran into problems with the audio drivers. The guide had provided its own advmame.rc configuration file, but that did not fix the issue. Configuring the Advance MAME configuration file by removing the ALSA also did not eliminate the error code, and importantly, the video did also not initialize.
-```python
+Following their guide, I used their Device Tree Overlay Creation Guide in their github repository to setup the button and screen setups. I then installed Advanced MAME following their instructions with few problems ( I utilized -j1 while building the code as -j3 ran into issues for me). Even though button and displays were mapped in the device tree, I still ran into problems with the audio drivers. The guide had provided its own advmame.rc configuration file, but that did not fix the issue. Configuring the Advance MAME configuration file by removing the ALSA also did not eliminate the error code, and importantly, the video did also not initialize.
+```
 debian@beaglebone:~$ sudo advmame robby                                                                                                                                                                             
 [sudo] password for debian:
 AdvanceMAME - Copyright (C) 1999-2018 by Andrea Mazzoleni
@@ -43,5 +43,16 @@ ALSA lib pcm_dmix.c:1108:(snd_pcm_dmix_open) unable to open slave
 No video modes available for the current game.
 Failed to initialize the video
 ```
+To fix these problems, I went into the advmame.rc files and removed these two lines, which resolved the first two errors.
+```
+device_alsa_device default
+device_alsa_mixer channel
+```
 
-Without many other steps I could take, I decided to take a break and explore it further later on. If anyone is interested in making their own emulator console with the PocketBeagle, I highly recommend using a commonly used screen such as the Adafruit ILI9341 to save on the headache of setting up and using the frame buffer. Before buying other parts, I would recommend setting up the software aspect of the device first, with special emphasis on having the emulator recognize and initialize video onto the display, as this seems to be the largest issue with actually starting the emulator. Even though I did not get the emulator running, I learned a lot from the project and will continue to attempt to get an emulator running. Good luck to anyone attempting similar projects and hopefully my insights were helpful!
+After looking through the AdvanceMAME documentation, I was able to start the program using the following command, which allowed any user to run the program as root. The manual gave some useful information for the required drivers for the program to run, so be sure to check it out.
+
+```
+chown root:root /usr/local/bin/advmame 
+chmod u+s /usr/local/bin/advmame
+```
+With those changes, I was able to start the emulator by typing advmame robby, as seen below. The emulator only displays on part of the screen currently, and I am playing with the different configurations to see what I can do about that. I have tried adjusting device_video_overlaysize, display_resize, display_magnify, display_expand, and a few others with little success. The game runs however, I just need to make a few adjustments to be able to see the screen and use it properly. I recorded a video of what it looks like and will link it here.
