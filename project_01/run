@@ -31,26 +31,13 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # --------------------------------------------------------------------------
 
-cd /var/lib/cloud9/ENGI301/project_01
-
 # Initialize Framebuffer for SPI screen
-sudo modprobe fbtft_device name=flexfb gpios=reset:87,dc:89,cs:5 speed=24000000 &&\
-sudo modprobe flexfb width=480 height=480 buswidth=8 init=\
--1,0x01,\
--2,120,\
--1,0x36,0xE8,\
--1,0x3A,0x66,\
--1,0x21,\
--1,0x11,\
--2,120,\
--1,0x29,\
--2,20,\
--1,0x13,\
--3
+sudo modprobe fbtft_device name=adafruit28 debug=7 verbose=3 rotate=90 gpios=dc:89,reset:87
 export FRAMEBUFFER=/dev/fb0
 
 # Start Game
 advmame robby
+
 
 
 
